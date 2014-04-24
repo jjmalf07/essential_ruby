@@ -13,12 +13,14 @@
 #   we usually have to do some research on how the task is done:
 #   http://en.wikipedia.org/wiki/Mortgage_calculator
 
+
 def pmt(rate, nper, pv)
-  # ============================================
-  # Your code to implement the method goes here.
-  # ============================================
+  rate12 = rate/12
+  numerator = pv*rate12
+  denomenator = 1-(1+rate12)**-nper
+  pmt = numerator/denomenator
 end
 
 # Example usage of the method:
 
-# puts "Your monthly payment will be #{pmt(0.01, 60, 30000)}."
+puts "Your monthly payment will be #{pmt(0.065, 360, 200000)}."
